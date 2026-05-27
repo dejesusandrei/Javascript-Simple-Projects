@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+.login-section, .create-acc-section{
+    background: linear-gradient(
+        135deg,
+        #0B133F,
+        #1B1E5B,
+        #393070
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.login-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 70vh;
+    width: 70%;
+    border-radius: 16px;
+}
+
+.left-side-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1.5em;
+    padding: 3em 3em;
+    color: white;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    p{
+        width: 85%;
+        line-height: 20px;
+        font-size: 17px;
+        font-weight: 200;
+    }
+}
+
+.logo-content{
+    display: flex;
+    align-items: center;
+    column-gap: 1em;
+    .logo-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        height: 90px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 50%;
+        img{
+            height: 50px;
+        }
+    }
+    h1{
+        font-size: 3.7rem;
+        font-family: 'Poppins';
+        font-weight: 600;
+    }
+}
+
+.copy-right{
+    width: 100%;
+    p{
+        text-align: center;
+        margin-left: 3em;
+        font-size: 13px;
+    }
+}
+
+.right-side-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.384);
+    border: 1px solid rgba(255, 255, 255, 0.199);
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    .form-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 1em;
+        height: 60vh;
+        width: 80%;
+        color: white;
+        p{
+            font-weight: 400;
+            font-size: 17px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .forgot-password{
+            margin-top: 1.8em;
+            color: lightblue;
+            font-weight: 400;
+            text-align: right;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .or{
+            margin-top: 1em;
+            font-size: 15px;
+            text-align: center;
+        }
+    }
+}
+
+#login-form{
+    .login-btn{
+        margin-top: 1em;
+        height: 50px;
+        width: 100%;
+        background: linear-gradient(135deg, #4F46E5, #7C3AED);
+        border: 1px solid rgba(255, 255, 255, 0.014);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    .create-acc-btn{
+        margin-top: 1em;
+        height: 50px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.096);
+        border: 1px solid rgba(255, 255, 255, 0.397);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}
+
+.form-group{
+    position: relative;
+    width: 100%;
+    input{
+        height: 60px;
+        width: 100%;
+        padding: 20px 12px 5px 15px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255, 255, 255, 0.014);
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+    label{
+        position: absolute;
+        left: 12px;
+        top: 20px;
+        color: rgb(223, 223, 223);
+        pointer-events: none;
+        transition: 0.5s;
+        padding: 0 5px;
+    }
+}
+
+.form-group{
+    margin-top: 1.5em;
+}
+
+.form-group input:focus{
+    outline: none;
+    border: 1px solid lightblue;
+}
+
+.form-group input[type="password"]::-ms-reveal,
+.form-group-create-acc input[type="password"]::-ms-reveal{
+    filter: invert(1);
+}
+
+.form-group input:focus+label,
+.form-group input:valid+label,
+.form-group-create-acc input:focus+label,
+.form-group-create-acc input:valid+label{
+    top: 5px;
+    font-size: 12px;
+    color: gray;
+}
+
+.email-error, .password-error {
+    border: 2px solid #ff4d4d !important; /* Gagawing pula ang border */
+    background-color: #fff2f2;           /* Lalagyan ng light red na background */
+    animation: shake 0.4s ease-in-out;    /* Paandarin ang alog animation */
+}
+
+/* 3. ANIMATION: Para umalog yung input box kapag nagka-error */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}
+
+
+.create-acc-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1em;
+    padding: 1em 2em;
+    width: 40%;
+    height: 80vh;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.384);
+    border: 1px solid rgba(255, 255, 255, 0.199);
+    .back-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        img{
+            width: 30px;
+        }
+    }
+}
+
+.back-btn:hover{
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255, 255, 255, 0.014);
+}
+
+.form-create-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 0 1em;
+    color: white;
+    .create-acc-text{
+        h2{
+            font-weight: 500;
+        }
+    }
+    .create-acc-description{
+        p{
+            font-weight: 400;
+            font-size: 15px;
+            color: rgb(211, 211, 211);
+        }
+    }
+}
+
+.create-form{
+    margin-top: 1em;
+    .submit-btn{
+        margin-top: 1em;
+        height: 50px;
+        width: 100%;
+        margin-bottom: 1em;
+        background: linear-gradient(135deg, #4F46E5, #7C3AED);
+        border: 1px solid rgba(255, 255, 255, 0.014);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    .have-acc-btn{
+        margin-top: 1em;
+        height: 50px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.096);
+        border: 1px solid rgba(255, 255, 255, 0.397);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .info-container{
+        margin-bottom: 2em;
+    }
+}
+
+.form-group-name{
+    margin-top: 10px;
+    display: flex;
+    column-gap: 1em;
+}
+
+.form-group-create-acc{
+    position: relative;
+    width: 100%;
+    input{
+        height: 60px;
+        width: 100%;
+        padding: 20px 12px 5px 15px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255, 255, 255, 0.014);
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+    label{
+        position: absolute;
+        left: 12px;
+        top: 20px;
+        color: rgb(223, 223, 223);
+        pointer-events: none;
+        transition: 0.5s;
+        padding: 0 5px;
+    }
+}
+
+.warning, .warning-1{
+    display: none;
+    column-gap: 5px;
+    margin-top: 10px;
+    .warning-logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        width: 30px;
+        img{
+            width: 20px;
+        }
+    }
+    .warning-message{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 11px;
+        color: #ff6666;
+    }
+}
+
+.js-warning{
+    display: flex;
+    transition: all 0.3s;
+}

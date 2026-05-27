@@ -3,10 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style/login.css">
+    <title>SmartSpend</title>
+    <link rel="stylesheet" href="style/authenthication.css">
 </head>
 <body>
-    
+    <main>
+        <section class="login-section">
+            <div class="login-container">
+                <div class="left-side-content">
+                    <div class="logo-content">
+                        <div class="logo-image">
+                            <img src="svg/wallet.svg" alt="Wallet icon">
+                        </div>
+                        <h1>SmartSpend</h1>
+                    </div>
+                    <p>Spend smarter and save better with SmartSpend — your simple way to track daily expenses and manage your money.</p>
+                    <div class="copy-right">
+                        <p>© 2026 Andrei De Jesus</p>
+                    </div>
+                </div>
+                <div class="right-side-content">
+                    <div class="form-container">
+                        <!-- Login Form -->
+                        <form id="login-form">
+                            <p class="login">Log into SmartSpend</p>
+                            <div class="form-group">
+                                <input type="text" id="email" required>
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="warning">
+                                <div class="warning-logo">
+                                    <img src="svg/warning.svg" alt="Warning icon">
+                                </div>
+                                <div class="warning-message">
+                                    The email you entered isn't connected to an account.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="password" required>
+                                <label for="password">Password</label>
+                            </div>
+                            <div class="warning-1">
+                                <div class="warning-logo">
+                                    <img src="svg/warning.svg" alt="Warning icon">
+                                </div>
+                                <div class="warning-message">
+                                    The password you entered is incorrect.
+                                </div>
+                            </div>
+                            <p class="forgot-password">Forgot Password?</p>
+                            <input type="submit" value="Log In" class="login-btn">
+                            <p class="or">or</p>
+                            <input type="button" value="Create Account" class="create-acc-btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script/authentication.js" type="module"></script>
 </body>
 </html>

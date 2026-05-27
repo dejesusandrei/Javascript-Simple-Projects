@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartSpend</title>
+    <link rel="stylesheet" href="style/authenthication.css">
+</head>
+<body>
+    <main>
+        <section class="create-acc-section">
+            <div class="create-acc-container">
+                <div class="form-create-container">
+                    <div class="back-btn" id="back-btn">
+                        <img src="svg/arrow-left.svg" alt="Back icon">
+                    </div>
+                    <div class="create-acc-text">
+                        <h2>Get started on SmartSpend</h2>
+                    </div>
+                    <div class="create-acc-description">
+                        <p>Create your SmartSpend account to start logging your expenses, categorizing your bills, and getting real-time insights into your
+                        financial habits. Your journey to smarter spending starts here!.</p>
+                    </div>
+                    <form class="create-form" id="create-acc-form">
+                        <div class="info-container">
+                            <h4>Name</h4>
+                            <div class="form-group-name">
+                                <div class="form-group-create-acc">
+                                    <input type="text" id="firstName" required>
+                                    <label for="firstName">First name</label>
+                                </div>
+                                <div class="form-group-create-acc">
+                                    <input type="text" id="lastName" required>
+                                    <label for="lastName">Last name</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-container">
+                            <h4>Email</h4>
+                            <div class="form-group-name">
+                                <div class="form-group-create-acc">
+                                    <input type="text" id="newEmail" required>
+                                    <label for="emailCreateAcc">Email</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-container">
+                            <h4>Password</h4>
+                            <div class="form-group-name">
+                                <div class="form-group-create-acc">
+                                    <input type="password" id="newPassword" required>
+                                    <label for="newPassword">Password</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" value="Submit" class="submit-btn">
+                        <input type="button" value="I already have an accountt" class="have-acc-btn">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script/authentication/createAccount.js" type="module"></script>
+</body>
+</html>
