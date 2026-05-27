@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.to-do-list-container{
+    display: grid;
+    grid-template-rows: 150px 1fr;
+    align-items: center;
+    padding-top: 3em;
+    row-gap: 30px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.to-do-list-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    padding-top: 2em;
+    h1{
+        font-size: 3rem;
+        text-align: center;
+        font-family: 'Roboto Mono', monospace;
+    }
+}
+
+.to-do-list-inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+    width: 50%;
+    height: 100px;
+}
+
+.to-do-list-inputs .todo-input{
+    width: 70%;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    padding: 10px 10px;
+}
+
+.to-do-list-inputs .todo-input:focus{
+    outline: none;
+}
+
+.to-do-list-inputs .add-btn{
+    padding: 13px 30px;
+    font-family: 'Roboto Mono', monospace;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+.to-do-list-inputs .add-btn:hover{
+    background-color: rgb(2, 164, 2);
+}
+
+.to-do-list-items-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 1em;
+    padding-bottom: 3em;
+}
+
+.to-do-list-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    row-gap: 5px;
+    border-top: 2px solid rgb(0, 0, 0);
+    padding-top: 1em;
+}
+
+.to-do-list-items-empty{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    width: 64%;
+    border-radius: 12px;
+    background-color: rgb(157, 178, 184);
+    border: 2px solid rgb(153, 153, 153);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    animation: pop 4s forwards;
+    p{
+        border-right: 4px solid black;
+        font-family: 'Roboto Mono', monospace;
+        font-weight: bold;
+        font-size: 2rem;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: type 5s steps(27) infinite,
+        cursor .5s step-end infinite;
+    }
+}
+
+.to-do-list-item{
+    display: grid;
+    grid-template-columns: 50px 1fr 250px;
+    align-items: center;
+    column-gap: 10px;
+    width: 90%;
+    height: 60px;
+    border-bottom: 1px solid rgb(132, 132, 132);
+}
+
+.to-do-list-text{
+    font-size: 16px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.to-do-list-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.btn{
+    width: 90px;
+    height: 40px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    font-size: 14px;
+}
+
+.toast-container{
+    position: absolute;
+    row-gap: 35px;
+    top: 100px;
+    right: 0;
+    width: 17%;
+    border-radius: 12px;
+    z-index: 1000;
+}
+
+.toast-add,
+.toast-edit{
+    position: relative;
+    display: none;
+    align-items: center;
+    padding-left: 1em;
+    column-gap: 10px;
+    width: 100%;
+    height: 65px;
+    margin-top: 1em;
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+    transform: translateX(100%);
+    animation: moveLeft 0.5s linear forwards;
+    img{
+        height: 20px;
+    }
+    p{
+        font-size: 14px;
+        font-family: 'Arial', monospace;
+    }
+}
+
+.toast-delete{
+    position: relative;
+    display: none;
+    align-items: center;
+    padding-left: 1em;
+    column-gap: 10px;
+    width: 100%;
+    height: 65px;
+    margin-top: 1em;
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+    transform: translateX(100%);
+    animation: moveLeft 0.5s linear forwards;
+    img{
+        height: 25px;
+    }
+    p{
+        font-size: 14px;
+        font-family: 'Arial', monospace;
+    }
+}
+
+.toast-add::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background-color: green;
+    animation: progressBar 2s linear forwards;
+}
+.toast-delete::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background-color: red;
+    animation: progressBar 2s linear forwards;
+}
+.toast-edit::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background-color: blue;
+    animation: progressBar 2s linear forwards;
+}
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    width: 60%;
+    column-gap: 20px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.inner-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    width: 100%;
+    h2{
+        font-size: 2rem;
+        text-align: center;
+        font-family: 'Roboto Mono', monospace;
+    }
+}
+
+.edit-task{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+    width: 80%;
+}
+
+.edit-task .todo-input{
+    width: 70%;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    padding: 10px 10px;
+}
+
+.edit-task .save-btn{
+    padding: 13px 30px;
+    font-family: 'Roboto Mono', monospace;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+.js-edit-btn{
+    background-color: rgb(1, 126, 167);
+    color: white;
+}
+
+.js-delete-btn{
+    background-color: rgb(203, 2, 2);
+    color: white;
+}
+
+.js-isEmpty{
+    display: flex;
+    transition: all 0.4s ease-in-out;
+}
+
+.js-completed{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.js-completed-btn{
+    opacity: 0.6;
+}
+
+.js-added,
+.js-deleted,
+.js-edited{
+    display: flex;
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.js-main-opacity{
+    opacity: 0.5;
+}
+
+.js-show-modal{
+    display: flex;
+}
+
+@keyframes type {
+    0%,100%{
+        width: 0;
+    }
+    60%, 80%{
+        width: 530px;
+    }
+}
+
+@keyframes cursor {
+    50%{
+        border-color: transparent;
+    }
+}
+
+@keyframes pop {
+    to{
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes moveLeft {
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes progressBar {
+    100%{
+        width: 0;
+    }
+}

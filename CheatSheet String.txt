@@ -1,0 +1,396 @@
+# JavaScript String Methods Cheat Sheet
+
+```txt
+==================================================
+JAVASCRIPT STRING METHODS
+==================================================
+
+METHOD: toLowerCase()
+
+DESCRIPTION:
+Converts all letters to lowercase.
+
+CODE:
+const text = 'HELLO';
+
+console.log(text.toLowerCase());
+
+OUTPUT:
+hello
+
+==================================================
+
+METHOD: toUpperCase()
+
+DESCRIPTION:
+Converts all letters to uppercase.
+
+CODE:
+const text = 'hello';
+
+console.log(text.toUpperCase());
+
+OUTPUT:
+HELLO
+
+==================================================
+
+METHOD: trim()
+
+DESCRIPTION:
+Removes spaces from both ends.
+
+CODE:
+const text = '  hello  ';
+
+console.log(text.trim());
+
+OUTPUT:
+hello
+
+==================================================
+
+METHOD: trimStart()
+
+DESCRIPTION:
+Removes spaces at the start.
+
+CODE:
+const text = '  hello';
+
+console.log(text.trimStart());
+
+OUTPUT:
+hello
+
+==================================================
+
+METHOD: trimEnd()
+
+DESCRIPTION:
+Removes spaces at the end.
+
+CODE:
+const text = 'hello  ';
+
+console.log(text.trimEnd());
+
+OUTPUT:
+hello
+
+==================================================
+
+METHOD: includes()
+
+DESCRIPTION:
+Checks if text exists.
+
+CODE:
+const text = 'JavaScript';
+
+console.log(text.includes('Script'));
+
+OUTPUT:
+true
+
+==================================================
+
+METHOD: startsWith()
+
+DESCRIPTION:
+Checks if string starts with text.
+
+CODE:
+const text = 'JavaScript';
+
+console.log(text.startsWith('Java'));
+
+OUTPUT:
+true
+
+==================================================
+
+METHOD: endsWith()
+
+DESCRIPTION:
+Checks if string ends with text.
+
+CODE:
+const text = 'JavaScript';
+
+console.log(text.endsWith('Script'));
+
+OUTPUT:
+true
+
+==================================================
+
+METHOD: indexOf()
+
+DESCRIPTION:
+Returns first matching index.
+
+CODE:
+const text = 'banana';
+
+console.log(text.indexOf('a'));
+
+OUTPUT:
+1
+
+==================================================
+
+METHOD: lastIndexOf()
+
+DESCRIPTION:
+Returns last matching index.
+
+CODE:
+const text = 'banana';
+
+console.log(text.lastIndexOf('a'));
+
+OUTPUT:
+5
+
+==================================================
+
+METHOD: slice()
+
+DESCRIPTION:
+Copies part of a string.
+
+CODE:
+const text = 'JavaScript';
+
+console.log(text.slice(0, 4));
+
+OUTPUT:
+Java
+
+==================================================
+
+METHOD: substring()
+
+DESCRIPTION:
+Returns part of a string.
+
+CODE:
+const text = 'JavaScript';
+
+console.log(text.substring(4, 10));
+
+OUTPUT:
+Script
+
+==================================================
+
+METHOD: replace()
+
+DESCRIPTION:
+Replaces text.
+
+CODE:
+const text = 'I like cats';
+
+console.log(text.replace('cats', 'dogs'));
+
+OUTPUT:
+I like dogs
+
+==================================================
+
+METHOD: replaceAll()
+
+DESCRIPTION:
+Replaces all matching text.
+
+CODE:
+const text = 'a-b-c';
+
+console.log(text.replaceAll('-', '/'));
+
+OUTPUT:
+a/b/c
+
+==================================================
+
+METHOD: split()
+
+DESCRIPTION:
+Converts string into array.
+
+CODE:
+const text = 'A,B,C';
+
+console.log(text.split(','));
+
+OUTPUT:
+['A', 'B', 'C']
+
+==================================================
+
+METHOD: charAt()
+
+DESCRIPTION:
+Gets character using index.
+
+CODE:
+const text = 'Hello';
+
+console.log(text.charAt(1));
+
+OUTPUT:
+e
+
+==================================================
+
+METHOD: at()
+
+DESCRIPTION:
+Gets character using index.
+
+CODE:
+const text = 'Hello';
+
+console.log(text.at(-1));
+
+OUTPUT:
+o
+
+==================================================
+
+METHOD: concat()
+
+DESCRIPTION:
+Combines strings.
+
+CODE:
+const a = 'Hello';
+const b = 'World';
+
+console.log(a.concat(' ', b));
+
+OUTPUT:
+Hello World
+
+==================================================
+
+METHOD: repeat()
+
+DESCRIPTION:
+Repeats string.
+
+CODE:
+const text = 'Hi ';
+
+console.log(text.repeat(3));
+
+OUTPUT:
+Hi Hi Hi
+
+==================================================
+
+METHOD: padStart()
+
+DESCRIPTION:
+Adds text at the beginning.
+
+CODE:
+const text = '5';
+
+console.log(text.padStart(3, '0'));
+
+OUTPUT:
+005
+
+==================================================
+
+METHOD: padEnd()
+
+DESCRIPTION:
+Adds text at the end.
+
+CODE:
+const text = '5';
+
+console.log(text.padEnd(3, '0'));
+
+OUTPUT:
+500
+
+==================================================
+
+METHOD: match()
+
+DESCRIPTION:
+Finds matching text using regex.
+
+CODE:
+const text = 'cat bat rat';
+
+console.log(text.match(/at/g));
+
+OUTPUT:
+['at', 'at', 'at']
+
+==================================================
+
+METHOD: search()
+
+DESCRIPTION:
+Searches text using regex.
+
+CODE:
+const text = 'JavaScript';
+
+console.log(text.search('Script'));
+
+OUTPUT:
+4
+
+==================================================
+
+METHOD: localeCompare()
+
+DESCRIPTION:
+Compares strings alphabetically.
+
+CODE:
+console.log('a'.localeCompare('b'));
+
+OUTPUT:
+-1
+
+==================================================
+
+METHOD: valueOf()
+
+DESCRIPTION:
+Returns primitive string value.
+
+CODE:
+const text = new String('Hello');
+
+console.log(text.valueOf());
+
+OUTPUT:
+Hello
+
+==================================================
+
+METHOD: toString()
+
+DESCRIPTION:
+Converts value to string.
+
+CODE:
+const text = 'Hello';
+
+console.log(text.toString());
+
+OUTPUT:
+Hello
+
+==================================================
+```

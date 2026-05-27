@@ -1,0 +1,419 @@
+==================================================
+JAVASCRIPT FUNCTIONS CHEAT SHEET
+==================================================
+
+FUNCTION: Basic Function
+
+DESCRIPTION:
+Creates reusable code.
+
+CODE:
+function greet(){
+  console.log('Hello');
+}
+
+greet();
+
+OUTPUT:
+Hello
+
+==================================================
+
+FUNCTION: Function with Parameters
+
+DESCRIPTION:
+Accepts values inside the function.
+
+CODE:
+function greet(name){
+  console.log(`Hello ${name}`);
+}
+
+greet('John');
+
+OUTPUT:
+Hello John
+
+==================================================
+
+FUNCTION: Function with Return
+
+DESCRIPTION:
+Returns a value from the function.
+
+CODE:
+function add(a, b){
+  return a + b;
+}
+
+const result = add(2, 3);
+
+console.log(result);
+
+OUTPUT:
+5
+
+==================================================
+
+FUNCTION: Arrow Function
+
+DESCRIPTION:
+Shorter way to write functions.
+
+CODE:
+const greet = () =>{
+  console.log('Hello');
+};
+
+greet();
+
+OUTPUT:
+Hello
+
+==================================================
+
+FUNCTION: Arrow Function with Parameters
+
+DESCRIPTION:
+Arrow function with values.
+
+CODE:
+const add = (a, b) =>{
+  return a + b;
+};
+
+console.log(add(2, 3));
+
+OUTPUT:
+5
+
+==================================================
+
+FUNCTION: Short Arrow Function
+
+DESCRIPTION:
+Returns value automatically.
+
+CODE:
+const add = (a, b) => a + b;
+
+console.log(add(2, 3));
+
+OUTPUT:
+5
+
+==================================================
+
+FUNCTION: Default Parameters
+
+DESCRIPTION:
+Sets default value if argument is missing.
+
+CODE:
+function greet(name = 'Guest'){
+  console.log(`Hello ${name}`);
+}
+
+greet();
+
+OUTPUT:
+Hello Guest
+
+==================================================
+
+FUNCTION: Anonymous Function
+
+DESCRIPTION:
+Function without a name.
+
+CODE:
+const greet = function(){
+  console.log('Hello');
+};
+
+greet();
+
+OUTPUT:
+Hello
+
+==================================================
+
+FUNCTION: Callback Function
+
+DESCRIPTION:
+Function passed into another function.
+
+CODE:
+function greet(callback){
+  console.log('Hello');
+
+  callback();
+}
+
+function bye(){
+  console.log('Bye');
+}
+
+greet(bye);
+
+OUTPUT:
+Hello
+Bye
+
+==================================================
+
+FUNCTION: Higher Order Function
+
+DESCRIPTION:
+Function that accepts another function.
+
+CODE:
+function calculator(a, b, operation){
+  return operation(a, b);
+}
+
+function add(x, y){
+  return x + y;
+}
+
+console.log(calculator(2, 3, add));
+
+OUTPUT:
+5
+
+==================================================
+
+FUNCTION: Function Expression
+
+DESCRIPTION:
+Stores function inside a variable.
+
+CODE:
+const greet = function(){
+  console.log('Hello');
+};
+
+greet();
+
+OUTPUT:
+Hello
+
+==================================================
+
+FUNCTION: IIFE
+
+DESCRIPTION:
+Runs immediately after creation.
+
+CODE:
+(function(){
+  console.log('Hello');
+})();
+
+OUTPUT:
+Hello
+
+==================================================
+
+FUNCTION: Rest Parameter
+
+DESCRIPTION:
+Accepts multiple arguments.
+
+CODE:
+function total(...numbers){
+
+  let sum = 0;
+
+  for(const num of numbers){
+    sum += num;
+  }
+
+  return sum;
+}
+
+console.log(total(1, 2, 3));
+
+OUTPUT:
+6
+
+==================================================
+
+FUNCTION: Spread Operator
+
+DESCRIPTION:
+Spreads array values.
+
+CODE:
+const numbers = [1, 2, 3];
+
+console.log(...numbers);
+
+OUTPUT:
+1 2 3
+
+==================================================
+
+FUNCTION: Nested Function
+
+DESCRIPTION:
+Function inside another function.
+
+CODE:
+function outer(){
+
+  function inner(){
+    console.log('Inner Function');
+  }
+
+  inner();
+}
+
+outer();
+
+OUTPUT:
+Inner Function
+
+==================================================
+
+FUNCTION: Recursive Function
+
+DESCRIPTION:
+Function calling itself.
+
+CODE:
+function countDown(num){
+
+  if(num === 0){
+    return;
+  }
+
+  console.log(num);
+
+  countDown(num - 1);
+}
+
+countDown(3);
+
+OUTPUT:
+3
+2
+1
+
+==================================================
+
+FUNCTION: setTimeout()
+
+DESCRIPTION:
+Runs code after delay.
+
+CODE:
+setTimeout(() =>{
+  console.log('Hello');
+}, 2000);
+
+OUTPUT:
+Hello
+(after 2 seconds)
+
+==================================================
+
+FUNCTION: setInterval()
+
+DESCRIPTION:
+Repeats code every interval.
+
+CODE:
+setInterval(() =>{
+  console.log('Hello');
+}, 1000);
+
+OUTPUT:
+Hello
+Hello
+Hello
+(repeats every second)
+
+==================================================
+
+KEYWORD: return
+
+DESCRIPTION:
+Stops function and returns value.
+
+CODE:
+function add(a, b){
+  return a + b;
+}
+
+console.log(add(2, 3));
+
+OUTPUT:
+5
+
+==================================================
+
+KEYWORD: arguments
+
+DESCRIPTION:
+Stores all passed arguments.
+
+CODE:
+function test(){
+  console.log(arguments);
+}
+
+test(1, 2, 3);
+
+OUTPUT:
+[1, 2, 3]
+
+==================================================
+
+FUNCTION: Destructured Parameters
+
+DESCRIPTION:
+Extract object values directly.
+
+CODE:
+function greet({name, age}){
+  console.log(name, age);
+}
+
+greet({
+  name: 'John',
+  age: 20
+});
+
+OUTPUT:
+John 20
+
+==================================================
+
+FUNCTION: Closures
+
+DESCRIPTION:
+Inner function remembers outer variables.
+
+CODE:
+function outer(){
+
+  let count = 0;
+
+  return function(){
+    count++;
+    console.log(count);
+  };
+
+}
+
+const counter = outer();
+
+counter();
+counter();
+
+OUTPUT:
+1
+2
+
+==================================================

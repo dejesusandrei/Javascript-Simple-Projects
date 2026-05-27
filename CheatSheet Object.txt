@@ -1,0 +1,473 @@
+==================================================
+JAVASCRIPT OBJECTS CHEAT SHEET
+==================================================
+
+OBJECT: Basic Object
+
+DESCRIPTION:
+Stores data using key and value pairs.
+
+CODE:
+const person = {
+  name: 'John',
+  age: 20
+};
+
+console.log(person);
+
+OUTPUT:
+{ name: 'John', age: 20 }
+
+==================================================
+
+OBJECT: Access Property (Dot Notation)
+
+DESCRIPTION:
+Access object value using dot.
+
+CODE:
+const person = {
+  name: 'John'
+};
+
+console.log(person.name);
+
+OUTPUT:
+John
+
+==================================================
+
+OBJECT: Access Property (Bracket Notation)
+
+DESCRIPTION:
+Access value using brackets.
+
+CODE:
+const person = {
+  name: 'John'
+};
+
+console.log(person['name']);
+
+OUTPUT:
+John
+
+==================================================
+
+OBJECT: Add Property
+
+DESCRIPTION:
+Adds new property to object.
+
+CODE:
+const person = {
+  name: 'John'
+};
+
+person.age = 20;
+
+console.log(person);
+
+OUTPUT:
+{ name: 'John', age: 20 }
+
+==================================================
+
+OBJECT: Update Property
+
+DESCRIPTION:
+Changes existing value.
+
+CODE:
+const person = {
+  name: 'John'
+};
+
+person.name = 'Mike';
+
+console.log(person);
+
+OUTPUT:
+{ name: 'Mike' }
+
+==================================================
+
+OBJECT: Delete Property
+
+DESCRIPTION:
+Removes property from object.
+
+CODE:
+const person = {
+  name: 'John',
+  age: 20
+};
+
+delete person.age;
+
+console.log(person);
+
+OUTPUT:
+{ name: 'John' }
+
+==================================================
+
+OBJECT: Nested Object
+
+DESCRIPTION:
+Object inside another object.
+
+CODE:
+const person = {
+  name: 'John',
+  address: {
+    city: 'Manila'
+  }
+};
+
+console.log(person.address.city);
+
+OUTPUT:
+Manila
+
+==================================================
+
+OBJECT: Object Method
+
+DESCRIPTION:
+Function inside object.
+
+CODE:
+const person = {
+  name: 'John',
+
+  greet(){
+    console.log('Hello');
+  }
+};
+
+person.greet();
+
+OUTPUT:
+Hello
+
+==================================================
+
+KEYWORD: this
+
+DESCRIPTION:
+Refers to current object.
+
+CODE:
+const person = {
+  name: 'John',
+
+  greet(){
+    console.log(this.name);
+  }
+};
+
+person.greet();
+
+OUTPUT:
+John
+
+==================================================
+
+OBJECT: Object.keys()
+
+DESCRIPTION:
+Returns object keys.
+
+CODE:
+const person = {
+  name: 'John',
+  age: 20
+};
+
+console.log(Object.keys(person));
+
+OUTPUT:
+['name', 'age']
+
+==================================================
+
+OBJECT: Object.values()
+
+DESCRIPTION:
+Returns object values.
+
+CODE:
+const person = {
+  name: 'John',
+  age: 20
+};
+
+console.log(Object.values(person));
+
+OUTPUT:
+['John', 20]
+
+==================================================
+
+OBJECT: Object.entries()
+
+DESCRIPTION:
+Returns key and value pairs.
+
+CODE:
+const person = {
+  name: 'John',
+  age: 20
+};
+
+console.log(Object.entries(person));
+
+OUTPUT:
+[['name', 'John'], ['age', 20]]
+
+==================================================
+
+OBJECT: for...in Loop
+
+DESCRIPTION:
+Loops through object keys.
+
+CODE:
+const person = {
+  name: 'John',
+  age: 20
+};
+
+for(const key in person){
+  console.log(key);
+}
+
+OUTPUT:
+name
+age
+
+==================================================
+
+OBJECT: Destructuring
+
+DESCRIPTION:
+Extract object values into variables.
+
+CODE:
+const person = {
+  name: 'John',
+  age: 20
+};
+
+const {name, age} = person;
+
+console.log(name);
+console.log(age);
+
+OUTPUT:
+John
+20
+
+==================================================
+
+OBJECT: Spread Operator
+
+DESCRIPTION:
+Copies object properties.
+
+CODE:
+const person = {
+  name: 'John',
+  age: 20
+};
+
+const newPerson = {
+  ...person
+};
+
+console.log(newPerson);
+
+OUTPUT:
+{ name: 'John', age: 20 }
+
+==================================================
+
+OBJECT: Merge Objects
+
+DESCRIPTION:
+Combines multiple objects.
+
+CODE:
+const obj1 = {
+  name: 'John'
+};
+
+const obj2 = {
+  age: 20
+};
+
+const merged = {
+  ...obj1,
+  ...obj2
+};
+
+console.log(merged);
+
+OUTPUT:
+{ name: 'John', age: 20 }
+
+==================================================
+
+OBJECT: Optional Chaining
+
+DESCRIPTION:
+Safely accesses nested properties.
+
+CODE:
+const person = {};
+
+console.log(person.address?.city);
+
+OUTPUT:
+undefined
+
+==================================================
+
+OBJECT: Object.freeze()
+
+DESCRIPTION:
+Prevents object changes.
+
+CODE:
+const person = {
+  name: 'John'
+};
+
+Object.freeze(person);
+
+person.name = 'Mike';
+
+console.log(person);
+
+OUTPUT:
+{ name: 'John' }
+
+==================================================
+
+OBJECT: Object.seal()
+
+DESCRIPTION:
+Prevents adding or deleting properties.
+
+CODE:
+const person = {
+  name: 'John'
+};
+
+Object.seal(person);
+
+person.age = 20;
+
+console.log(person);
+
+OUTPUT:
+{ name: 'John' }
+
+==================================================
+
+OBJECT: hasOwnProperty()
+
+DESCRIPTION:
+Checks if property exists.
+
+CODE:
+const person = {
+  name: 'John'
+};
+
+console.log(person.hasOwnProperty('name'));
+
+OUTPUT:
+true
+
+==================================================
+
+OBJECT: Constructor Function
+
+DESCRIPTION:
+Creates multiple objects.
+
+CODE:
+function Person(name, age){
+  this.name = name;
+  this.age = age;
+}
+
+const user = new Person('John', 20);
+
+console.log(user);
+
+OUTPUT:
+Person { name: 'John', age: 20 }
+
+==================================================
+
+OBJECT: Class
+
+DESCRIPTION:
+Blueprint for objects.
+
+CODE:
+class Person{
+
+  constructor(name){
+    this.name = name;
+  }
+
+  greet(){
+    console.log(this.name);
+  }
+
+}
+
+const user = new Person('John');
+
+user.greet();
+
+OUTPUT:
+John
+
+==================================================
+
+OBJECT: JSON.stringify()
+
+DESCRIPTION:
+Converts object to JSON string.
+
+CODE:
+const person = {
+  name: 'John'
+};
+
+console.log(JSON.stringify(person));
+
+OUTPUT:
+{\"name\":\"John\"}
+
+==================================================
+
+OBJECT: JSON.parse()
+
+DESCRIPTION:
+Converts JSON string to object.
+
+CODE:
+const text = '{\"name\":\"John\"}';
+
+console.log(JSON.parse(text));
+
+OUTPUT:
+{ name: 'John' }
+
+==================================================

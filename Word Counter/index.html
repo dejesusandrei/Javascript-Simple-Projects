@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="images/clipboard.svg" alt="Clipboard icon">
+                </div>
+                <div class="text">
+                    <h2>Text Analyzer</h2>
+                    <p>Real-time text analysis</p>
+                </div>
+
+                <div class="real-time">
+                    <div class="container-real-time">
+                        <p>Real-time</p>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="body">
+            <div class="body-container">
+                <textarea class="text-area js-text-area" placeholder="Type or paste your text here..."></textarea>
+                <div class="texts-container">
+                    <div class="text-box blue">
+                        <div class="text-logo text-blue">
+                            <p>Aa</p>
+                        </div>
+                        <h1 class="js-word">0</h1>
+                        <p>Words</p>
+                        <div class="line-blue"></div>
+                    </div>
+                    <div class="text-box green">
+                        <div class="text-logo text-green">
+                            <p>T</p>
+                        </div>
+                        <h1 class="js-char">0</h1>
+                        <p>Characters</p>
+                        <div class="line-green"></div>
+                    </div>
+                    <div class="text-box yellow">
+                        <div class="text-logo text-yellow">
+                            <p>123</p>
+                        </div>
+                        <h1 class="js-num">0</h1>
+                        <p>Numbers</p>
+                        <div class="line-yellow"></div>
+                    </div>
+                    <div class="text-box violet">
+                        <div class="text-logo text-violet">
+                            <p>!@#</p>
+                        </div>
+                        <h1 class="js-sym">0</h1>
+                        <p>Symbols</p>
+                        <div class="line-violet"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="script/main.js"></script>
+</body>
+</html>

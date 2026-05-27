@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-body">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <img src="icon/book.svg" alt="Book logo">
+                </div>
+                <h1>My Book List</h1>
+            </div>
+        </header>
+    
+        <form id="my-from" class="my-form">
+            <div class="form-group">
+                <label for="title" >Title:</label>
+                <input type="text" id="title" class="js-title">
+            </div>
+            <div class="form-group">
+                <label for="author" >Author:</label>
+                <input type="text" id="author"  class="js-author">
+            </div>
+            <div class="form-group">
+                <label for="isbn" >ISBN:</label>
+                <input type="text" id="isbn"  class="js-isbn">
+            </div>
+            <button class="add-book-btn js-add">Add book</button>
+        </form>
+    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>ISBN</th>
+                    <th class="action-text">Action</th>
+                </tr>
+            </thead>
+            <tbody class="book-items">
+                
+            </tbody>
+        </table>
+
+        <div class="empty-container">
+            <div class="empty-text">
+                <p>Your bookshelf is empty. Add your first book to get started.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container">
+    </div>
+
+    <div class="edit-modal">
+        
+    </div>
+
+
+    <script src="script/script.js" type="module"></script>
+</body>
+</html>

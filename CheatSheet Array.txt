@@ -1,0 +1,529 @@
+# JAVASCRIPT ARRAY METHODS CHEAT SHEET
+
+==================================================
+
+METHOD: push()
+
+DESCRIPTION:
+Adds element(s) to the end of an array.
+
+CODE:
+const arr = [1, 2];
+
+arr.push(3);
+
+console.log(arr);
+
+OUTPUT:
+[1, 2, 3]
+
+==================================================
+
+METHOD: pop()
+
+DESCRIPTION:
+Removes the last element from an array.
+
+CODE:
+const arr = [1, 2, 3];
+
+arr.pop();
+
+console.log(arr);
+
+OUTPUT:
+[1, 2]
+
+==================================================
+
+METHOD: unshift()
+
+DESCRIPTION:
+Adds element(s) to the beginning of an array.
+
+CODE:
+const arr = [2, 3];
+
+arr.unshift(1);
+
+console.log(arr);
+
+OUTPUT:
+[1, 2, 3]
+
+==================================================
+
+METHOD: shift()
+
+DESCRIPTION:
+Removes the first element from an array.
+
+CODE:
+const arr = [1, 2, 3];
+
+arr.shift();
+
+console.log(arr);
+
+OUTPUT:
+[2, 3]
+
+==================================================
+
+METHOD: indexOf()
+
+DESCRIPTION:
+Returns the index position of a value.
+
+CODE:
+const arr = ['Apple', 'Banana', 'Orange'];
+
+console.log(arr.indexOf('Banana'));
+
+OUTPUT:
+1
+
+==================================================
+
+METHOD: lastIndexOf()
+
+DESCRIPTION:
+Returns the last matching index position.
+
+CODE:
+const arr = [1, 2, 3, 2];
+
+console.log(arr.lastIndexOf(2));
+
+OUTPUT:
+3
+
+==================================================
+
+METHOD: includes()
+
+DESCRIPTION:
+Checks if a value exists in the array.
+
+CODE:
+const arr = [1, 2, 3];
+
+console.log(arr.includes(2));
+
+OUTPUT:
+true
+
+==================================================
+
+METHOD: find()
+
+DESCRIPTION:
+Returns the first element that matches a condition.
+
+CODE:
+const arr = [5, 10, 15];
+
+const result = arr.find(num => num > 8);
+
+console.log(result);
+
+OUTPUT:
+10
+
+==================================================
+
+METHOD: findIndex()
+
+DESCRIPTION:
+Returns the index of the first matching element.
+
+CODE:
+const arr = [5, 10, 15];
+
+const result = arr.findIndex(num => num > 8);
+
+console.log(result);
+
+OUTPUT:
+1
+
+==================================================
+
+METHOD: forEach()
+
+DESCRIPTION:
+Loops through each array element.
+
+CODE:
+const arr = ['A', 'B', 'C'];
+
+arr.forEach(letter => {
+  console.log(letter);
+});
+
+OUTPUT:
+A
+B
+C
+
+==================================================
+
+METHOD: map()
+
+DESCRIPTION:
+Creates a new array by modifying each element.
+
+CODE:
+const arr = [1, 2, 3];
+
+const doubled = arr.map(num => num * 2);
+
+console.log(doubled);
+
+OUTPUT:
+[2, 4, 6]
+
+==================================================
+
+METHOD: filter()
+
+DESCRIPTION:
+Returns elements that pass a condition.
+
+CODE:
+const arr = [1, 2, 3, 4];
+
+const even = arr.filter(num => num % 2 === 0);
+
+console.log(even);
+
+OUTPUT:
+[2, 4]
+
+==================================================
+
+METHOD: reduce()
+
+DESCRIPTION:
+Reduces the array into a single value.
+
+CODE:
+const arr = [1, 2, 3];
+
+const total = arr.reduce((sum, num) => {
+  return sum + num;
+}, 0);
+
+console.log(total);
+
+OUTPUT:
+6
+
+==================================================
+
+METHOD: some()
+
+DESCRIPTION:
+Checks if at least one element passes a condition.
+
+CODE:
+const arr = [1, 2, 3];
+
+console.log(arr.some(num => num > 2));
+
+OUTPUT:
+true
+
+==================================================
+
+METHOD: every()
+
+DESCRIPTION:
+Checks if all elements pass a condition.
+
+CODE:
+const arr = [1, 2, 3];
+
+console.log(arr.every(num => num > 0));
+
+OUTPUT:
+true
+
+==================================================
+
+METHOD: sort()
+
+DESCRIPTION:
+Sorts array elements.
+
+CODE:
+const arr = [3, 1, 2];
+
+arr.sort();
+
+console.log(arr);
+
+OUTPUT:
+[1, 2, 3]
+
+==================================================
+
+METHOD: reverse()
+
+DESCRIPTION:
+Reverses array order.
+
+CODE:
+const arr = [1, 2, 3];
+
+arr.reverse();
+
+console.log(arr);
+
+OUTPUT:
+[3, 2, 1]
+
+==================================================
+
+METHOD: slice()
+
+DESCRIPTION:
+Copies part of an array.
+
+CODE:
+const arr = [1, 2, 3, 4];
+
+const result = arr.slice(1, 3);
+
+console.log(result);
+
+OUTPUT:
+[2, 3]
+
+==================================================
+
+METHOD: splice() : Add/Remove
+
+DESCRIPTION:
+Adds, removes, or replaces elements.
+
+CODE:
+const arr = [1, 2, 4];
+
+arr.splice(2, 0, 3);
+
+console.log(arr);
+
+OUTPUT:
+[1, 2, 3, 4]
+
+==================================================
+
+METHOD: concat()
+
+DESCRIPTION:
+Combines arrays together.
+
+CODE:
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+
+const result = arr1.concat(arr2);
+
+console.log(result);
+
+OUTPUT:
+[1, 2, 3, 4]
+
+==================================================
+
+METHOD: join()
+
+DESCRIPTION:
+Combines array elements into a string.
+
+CODE:
+const arr = ['Hello', 'World'];
+
+console.log(arr.join(' '));
+
+OUTPUT:
+Hello World
+
+==================================================
+
+METHOD: toString()
+
+DESCRIPTION:
+Converts array into a string.
+
+CODE:
+const arr = [1, 2, 3];
+
+console.log(arr.toString());
+
+OUTPUT:
+1,2,3
+
+==================================================
+
+METHOD: flat()
+
+DESCRIPTION:
+Flattens nested arrays.
+
+CODE:
+const arr = [1, [2, 3]];
+
+console.log(arr.flat());
+
+OUTPUT:
+[1, 2, 3]
+
+==================================================
+
+METHOD: at()
+
+DESCRIPTION:
+Gets element using index.
+
+CODE:
+const arr = [10, 20, 30];
+
+console.log(arr.at(1));
+
+OUTPUT:
+20
+
+==================================================
+
+METHOD: fill()
+
+DESCRIPTION:
+Fills array with a static value.
+
+CODE:
+const arr = [1, 2, 3];
+
+arr.fill(0);
+
+console.log(arr);
+
+OUTPUT:
+[0, 0, 0]
+
+==================================================
+
+METHOD: copyWithin()
+
+DESCRIPTION:
+Copies part of an array inside the same array.
+
+CODE:
+const arr = [1, 2, 3, 4];
+
+arr.copyWithin(0, 2);
+
+console.log(arr);
+
+OUTPUT:
+[3, 4, 3, 4]
+
+Original:
+[1, 2, 3, 4]
+
+Copy:
+      [3, 4]
+       ↑
+   start at index 2
+
+Paste at index 0
+
+Result:
+[3, 4, 3, 4]
+
+==================================================
+
+METHOD: entries()
+
+DESCRIPTION:
+Returns array index and value pairs.
+
+CODE:
+const arr = ['A', 'B'];
+
+console.log([...arr.entries()]);
+
+OUTPUT:
+[[0, 'A'], [1, 'B']]
+
+==================================================
+
+METHOD: keys()
+
+DESCRIPTION:
+Returns array indexes.
+
+CODE:
+const arr = ['A', 'B'];
+
+console.log([...arr.keys()]);
+
+OUTPUT:
+[0, 1]
+
+==================================================
+
+METHOD: values()
+
+DESCRIPTION:
+Returns array values.
+
+CODE:
+const arr = ['A', 'B'];
+
+console.log([...arr.values()]);
+
+OUTPUT:
+['A', 'B']
+
+==================================================
+
+METHOD: Array.isArray()
+
+DESCRIPTION:
+Checks if a value is an array.
+
+CODE:
+console.log(Array.isArray([1, 2]));
+
+OUTPUT:
+true
+
+==================================================
+
+METHOD: Array.from()
+
+DESCRIPTION:
+Creates an array from iterable data.
+
+CODE:
+console.log(Array.from('Hello'));
+
+OUTPUT:
+['H', 'e', 'l', 'l', 'o']
+
+==================================================
+
+METHOD: Array.of()
+
+DESCRIPTION:
+Creates a new array from arguments.
+
+CODE:
+console.log(Array.of(1, 2, 3));
+
+OUTPUT:
+[1, 2, 3]
+
+==================================================
