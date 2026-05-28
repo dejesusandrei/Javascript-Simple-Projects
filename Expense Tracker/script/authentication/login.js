@@ -40,6 +40,10 @@ function login(e){
     }
     // Access the user object from the successful result
     const user = loginResult.userExist;
+
+    // I-save ang pangalan ng user sa localStorage para makuha ng ibang page
+    localStorage.setItem('currentUser', JSON.stringify(user));
+
     // Redirect based on role (defaulting to userDashboard if role is undefined)
     window.location.href = user.role === 'admin' ? 'adminDashboard.html' : 'userDashboard.html';
 

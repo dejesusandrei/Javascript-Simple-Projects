@@ -7,10 +7,12 @@
 }
 
 body{
-    background-color: lightgray;
+    background-color: rgba(230, 230, 230, 0.601);
     font-family: 'Inter', sans-serif;
-    padding-left: 65px;
-    padding-left: 120px;
+    margin: 0;
+    padding-top: 65px;
+    padding-left: 240px;
+    height: 200vh;
 }
 
 header{
@@ -21,6 +23,7 @@ header{
     height: 65px;
     z-index: 1000;
     background-color: #ffffff;
+    border-bottom: 1px solid rgb(203, 203, 203);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,4 +116,19 @@ nav{
             font-size: 14px;
         }
     }
+}
+
+.side-bar{
+    position: fixed;
+    top: 65px;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    width: 230px;
+    border-right: 1px solid rgb(203, 203, 203);
+    background-color: #ffffff;
+}
+
+section{
+    border-left: 1px solid red;
 }
