@@ -19,56 +19,71 @@ mouseHover.forEach(link => {
     const h4 = link.querySelector('.h4-hover');
     const normalIcon = link.querySelector('.normal-icon');
     const hoverIcon = link.querySelector('.hover-icon');
-    if(h4 && normalIcon && hoverIcon){
-        link.addEventListener('mouseenter', () =>{
-            h4.style.color = '#5B21B6';
-            normalIcon.style.display = 'none';
-            hoverIcon.style.display = 'inline';
-        });
-        link.addEventListener('mouseleave', () =>{
-            h4.style.color = '#4d4d4d';
-            normalIcon.style.display = 'inline';
-            hoverIcon.style.display = 'none';
-        });
-    }
+    // Isang safety check na lang para sa lahat ng elements
+    if (!h4 || !normalIcon || !hoverIcon) return; 
+
+    // Isang function na lang na kayang mag-handle ng parehong Enter at Leave
+    const toggleHoverState = (isHovered) => {
+        h4.style.color = isHovered ? '#5B21B6' : '#4d4d4d';
+        normalIcon.style.display = isHovered ? 'none' : 'inline';
+        hoverIcon.style.display = isHovered ? 'inline' : 'none';
+    };
+
+    link.addEventListener('mouseenter', () => toggleHoverState(true));
+    link.addEventListener('mouseleave', () => toggleHoverState(false));
 });
 
 
+
+const saveSidebarState = localStorage.getItem('sidebarState');
+saveSidebarState === 'collapsed' ? collapseSidebar() : expandSidebar();
+
 // toggle
 toggleBar.addEventListener('click', () =>{
-    if(toggleBarX) toggleBarX.style.display = 'block';
-    if(toggleContainer) toggleContainer.style.marginLeft = '0' ;
-    if(toggleBar) toggleBar.style.display = 'none';
-    if(body) body.style.marginLeft = '80px';
-    if(logoIconContainer) {
-        logoIconContainer.style.borderRight = '1px solid rgb(203, 203, 203)';
-        logoIconContainer.style.borderBottom = '1px solid white';
-    }
-    if(logoText) logoText.style.display = 'none';
-
-    const h4Collapse = document.querySelectorAll('.collapse');
-    sideBar.style.width = '70px';
-    h4Collapse.forEach(h4 => {
-        h4.style.display = 'none';
-    });
-
+    collapseSidebar();
+    localStorage.setItem('sidebarState', 'collapsed');
 });
 
 // toggle X
 toggleBarX.addEventListener('click', () =>{
-    if(toggleBarX) toggleBarX.style.display = 'none';
-    if(toggleBar) toggleBar.style.display = 'block';
-    if(toggleContainer) toggleContainer.style.marginLeft = '2em';
-    if(body) body.style.marginLeft = '250px';
+    expandSidebar();
+    localStorage.setItem('sidebarState', 'expanded');
+});
+
+
+function collapseSidebar(){
+    toggleBarX?.style.setProperty('display', 'block');
+    toggleContainer?.style.setProperty('margin-left', '0');
+    toggleBar?.style.setProperty('display', 'none');
+    body?.style.setProperty('margin-left', '80px');
+    logoText?.style.setProperty('display', 'none');
+
+    if(logoIconContainer) {
+        logoIconContainer.style.borderRight = '1px solid rgb(203, 203, 203)';
+        logoIconContainer.style.borderBottom = '1px solid white';
+    }
+    if (sideBar) sideBar.style.width = '70px';
+    
+    const h4Collapse = document.querySelectorAll('.collapse');
+    h4Collapse.forEach(h4 => h4.style.display = 'none');
+}
+
+function expandSidebar(){
+    // Gumagamit ng ?. para sa mabilisang style changes
+    // h1.style.setProperty('background-color', 'blue');
+    toggleBarX?.style.setProperty('display', 'none');
+    toggleBar?.style.setProperty('display', 'block');
+    toggleContainer?.style.setProperty('margin-left', '2em');
+    body?.style.setProperty('margin-left', '250px');
+    logoText?.style.setProperty('display', 'flex');
+
+
     if(logoIconContainer){ 
         logoIconContainer.style.borderRight = 'none';
         logoIconContainer.style.borderBottom = 'none';
     }
-    if(logoText) logoText.style.display = 'flex';
+    if (sideBar) sideBar.style.width = '240px';
+    
     const h4Collapse = document.querySelectorAll('.collapse');
-    sideBar.style.width = '240px';
-    h4Collapse.forEach(h4 => {
-        h4.style.display = 'block';
-    });
-
-});
+    h4Collapse.forEach(h4 => h4.style.display = 'block');
+}
