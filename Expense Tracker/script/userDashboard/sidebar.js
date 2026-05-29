@@ -6,6 +6,7 @@ const toggleBarX = document.getElementById('toggle-x');
 const logoText = document.getElementById('logo-text');
 const logoIconContainer = document.getElementById('logo-container');
 const sideBar = document.querySelector(".side-bar");
+const body = document.getElementById('body');
 
 
 // Logout
@@ -37,11 +38,12 @@ mouseHover.forEach(link => {
 toggleBar.addEventListener('click', () =>{
     if(toggleBarX) toggleBarX.style.display = 'block';
     if(toggleContainer) toggleContainer.style.marginLeft = '0' ;
+    if(toggleBar) toggleBar.style.display = 'none';
+    if(body) body.style.marginLeft = '80px';
     if(logoIconContainer) {
         logoIconContainer.style.borderRight = '1px solid rgb(203, 203, 203)';
         logoIconContainer.style.borderBottom = '1px solid white';
     }
-    if(toggleBar) toggleBar.style.display = 'none';
     if(logoText) logoText.style.display = 'none';
 
     const h4Collapse = document.querySelectorAll('.collapse');
@@ -56,7 +58,8 @@ toggleBar.addEventListener('click', () =>{
 toggleBarX.addEventListener('click', () =>{
     if(toggleBarX) toggleBarX.style.display = 'none';
     if(toggleBar) toggleBar.style.display = 'block';
-    if(toggleContainer) toggleContainer.style.marginLeft = '2em' ;
+    if(toggleContainer) toggleContainer.style.marginLeft = '2em';
+    if(body) body.style.marginLeft = '250px';
     if(logoIconContainer){ 
         logoIconContainer.style.borderRight = 'none';
         logoIconContainer.style.borderBottom = 'none';
