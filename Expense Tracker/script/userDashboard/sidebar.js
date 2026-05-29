@@ -55,7 +55,7 @@ function collapseSidebar(){
     toggleBarX?.style.setProperty('display', 'block');
     toggleContainer?.style.setProperty('margin-left', '0');
     toggleBar?.style.setProperty('display', 'none');
-    body?.style.setProperty('margin-left', '80px');
+    body?.style.setProperty('margin-left', '90px');
     logoText?.style.setProperty('display', 'none');
 
     if(logoIconContainer) {
@@ -74,7 +74,7 @@ function expandSidebar(){
     toggleBarX?.style.setProperty('display', 'none');
     toggleBar?.style.setProperty('display', 'block');
     toggleContainer?.style.setProperty('margin-left', '2em');
-    body?.style.setProperty('margin-left', '250px');
+    body?.style.setProperty('margin-left', '260px');
     logoText?.style.setProperty('display', 'flex');
 
 

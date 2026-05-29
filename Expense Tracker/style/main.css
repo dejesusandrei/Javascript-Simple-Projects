@@ -7,12 +7,13 @@
 }
 
 body{
-    background-color: rgba(230, 230, 230, 0.601);
+    background-color: #ececec7b;
     font-family: 'Inter', sans-serif;
     margin: 0;
-    margin-top: 65px;
-    margin-left: 250px;
-    height: 200vh;
+    margin-top: 85px;
+    margin-left: 260px;
+    margin-right: 50px;
+    height: 90vh;
 }
 
 header{
@@ -20,7 +21,7 @@ header{
     top: 0;
     left: 0;
     right: 0;
-    height: 65px;
+    height: 75px;
     z-index: 1000;
     background-color: #ffffff;
     display: flex;
@@ -33,7 +34,7 @@ nav{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 65px;
+    height: 75px;
 }
 
 .logo-container{
@@ -124,7 +125,7 @@ nav{
 
 .side-bar{
     position: fixed;
-    top: 65px;
+    top: 75px;
     left: 0;
     bottom: 0;
     z-index: 1000;
@@ -209,6 +210,66 @@ nav{
     border: 1px solid rgba(255,255,255,0.1);
 }
 
+main{
+    height: 90vh;
+    width: 100%;
+    padding: 1em;
+}
+
 section{
-    border-left: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+
+    .title-section{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2px;
+        h1{
+            font-family: 'Poppins';
+            font-size: 1.8rem;
+        }
+        p{
+            font-size: 14px;
+            font-weight: 500;
+            color: #3d3d3d;
+            font-family: 'Poppins';
+        }
+    }
+
+    .expenses-section{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1em;
+
+
+        .expenses{
+            background-color: white;
+            height: 160px;
+            padding: 1em 2em;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+
+            .wallet-logo{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 60px;
+                height: 60px;
+                border-radius: 12px;
+                img{
+                    width: 40px;
+                }
+            }
+            .green{
+                background-color: rgba(0, 128, 0, 0.108);
+            }
+            .red{
+                background-color: rgba(255, 0, 0, 0.108);
+            }
+            .blue{
+                background-color: rgba(0, 0, 255, 0.108);
+            }
+        }
+    }
 }
