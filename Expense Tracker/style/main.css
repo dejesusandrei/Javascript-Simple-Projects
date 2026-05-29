@@ -244,8 +244,9 @@ section{
 
 
         .expenses{
+            display: flex;
+            column-gap: 2em;
             background-color: white;
-            height: 160px;
             padding: 1em 2em;
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 16px;
@@ -270,6 +271,77 @@ section{
             .blue{
                 background-color: rgba(0, 0, 255, 0.108);
             }
+        }
+
+        .total-expenses{
+            display: flex;
+            row-gap: 15px;
+            flex-direction: column;
+
+            .compared-percentage{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: 10px;
+                width: 80px;
+                height: 23px;
+                border-radius: 8px;
+                .icon-box{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 10px;
+                    height: 10px;
+                    img{
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+                .percentage-text{
+                    .green-t{
+                        background-color: transparent;
+                        color: green;
+                        font-weight: 500;
+                        font-size: 13px;
+                    }
+                    .red-t{
+                        background-color: transparent;
+                        color: red;
+                        font-weight: 500;
+                        font-size: 13px;
+                    }
+                    .blue-t{
+                        background-color: transparent;
+                        color: blue;
+                        font-weight: 500;
+                        font-size: 13px;
+                    }
+                }
+            }
+
+            .green-box{
+                background-color: rgba(0, 128, 0, 0.108);
+            }
+            .red-box{
+                background-color: rgba(255, 0, 0, 0.108);
+            }
+            .blue-box{
+                background-color: rgba(0, 0, 255, 0.108);
+            }
+
+            .money-container h4{
+                font-family: 'Poppins';
+            }
+
+            .income-text p,
+            .compared-text p{
+                font-size: 13px;
+                font-weight: 500;
+                color: #4d4d4d;
+            }
+
+
+
         }
     }
 }
